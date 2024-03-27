@@ -1,0 +1,31 @@
+<div class="mt-5 mb-3 d-flex justify-content-between" style="margin: 25px 23%;">
+  <%= image_tag 'image.png', style: 'width: 70px; height: 70px;' %>
+  <div class="d-flex">
+    <p class="mt-3 text-sm-end">Handicrafted by <br>Jim HLS</p>
+    <%= image_tag 'avatar.png' %>
+  </div>
+</div>
+<div class="w-100 d-flex justify-content-center align-items-center flex-column" style="height: 300px; background-color: #29B363;">
+  <h1 class="text-white fs-30">A joke a day keeps the docker away</h1>
+  <p class="text-white">If you joke wrong way, your teeth have to pay. (Serious)</p>
+</div>
+<div class="d-flex justify-content-center align-items-center flex-column mb-5">
+  <p id="joke-content" class="mt-5 text-left w-50">
+    <%= @joke&.content || "That's all the jokes for today! Come back another day!" %>
+  </p>
+  <% if @joke.present? %>
+    <div>
+      <%= link_to 'This is Funny!', like_path(@joke), remote: true, class: 'btn btn-primary border-0 rounded-0 mx-3 px-5', id: 'like' %>
+      <%= link_to 'This is not funny.', dislike_path(@joke), remote: true, class: 'btn border-0 rounded-0 mx-3 px-5', id: 'dislike', style: 'background-color: #29B363; color: white;' %>
+    </div>
+  <% end %>
+</div>
+<div class="border-bottom w-50 m-auto" style="height: 50px;"></div>
+<div class="d-flex justify-content-center align-items-center flex-column">
+  <p class="mt-5 text-center">
+    This website is created as part of Hlsolutions program. The materials contained on this website are provided for general <br>
+    information only and do not constitute any form of advice. HLS assumes no responsibility for the accuracy of any particular statement and <br>
+    accepts no liability for any loss or damage which may arise from reliance on the information contained on this site.
+  </p>
+  <p class="text-center">Copyright 2021 HLS</p>
+</div>

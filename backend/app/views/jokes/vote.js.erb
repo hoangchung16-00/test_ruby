@@ -1,0 +1,9 @@
+<% if @joke %>
+  $('#joke-content').text('<%= @joke.content %>');
+  $('#like').attr('href', '<%= like_path(@joke) %>');
+  $('#dislike').attr('href', '<%= dislike_path(@joke) %>');
+<% else %>
+  $('#joke-content').text("That's all the jokes for today! Come back another day!");
+  $('#like').css('display', 'none');
+  $('#dislike').css('display', 'none');
+<% end %>
